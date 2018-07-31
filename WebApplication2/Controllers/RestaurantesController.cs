@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Models;
@@ -13,11 +14,24 @@ namespace WebApplication2.Controllers
     public class RestaurantesController : Controller
     {
         private Context db = new Context();
-
-        // GET: Restaurantes
+        
+        /*// GET: Restaurantes
         public ActionResult Index()
         {
             return View(db.Restaurantes.ToList());
+        }
+        */
+        public async Task<ActionResult> Index(string searchString)
+        {
+            var rests = from r in db.Restaurantes
+                         select r;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                rests = rests.Where(s => s.RestauranteNome.Contains(searchString));
+            }
+
+            return View(await rests.ToListAsync());
         }
 
         // GET: Restaurantes/Details/5

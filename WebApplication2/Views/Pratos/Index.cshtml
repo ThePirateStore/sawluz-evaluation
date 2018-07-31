@@ -31,12 +31,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <a href="~/Pratos/Delete/"><button class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></button></a>
-            @Html.ActionLink("Delete", "Delete", new { id = item.PratoID })
+            <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = item.PratoID })'"><span class="glyphicon glyphicon-minus"> </span> </button>
         </td>
         <td>
-            <a href="~/Pratos/Edit/"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PratoID })
+            <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = item.PratoID })'"><span class="glyphicon glyphicon-pencil"> </span> </button>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rest.RestauranteNome)      

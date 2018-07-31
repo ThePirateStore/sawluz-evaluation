@@ -6,9 +6,26 @@
 
 <p>&emsp;</p>
 <h2>RESTAURANTES</h2>
-<p>&emsp;</p>
-<a href="~/Restaurantes/Create"><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Cadastrar novo Restaurante</button></a>
-<p>&emsp;</p>
+
+<form asp-controller="Movies" asp-action="Index">
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label for="SearchString">Nome:</label>
+            <input type="text" name="SearchString" class="form-control"><br />  
+            <button type="submit" class="btn btn-primary" value="Pesquisar">
+                <span class="glyphicon glyphicon-search"> </span> Pesquisar
+            </button>
+        </div>
+    </div>
+</form>
+<p>&ensp;</p>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <a href="~/Restaurantes/Create"><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Cadastrar novo Restaurante</button></a>
+        <p>&emsp;</p>
+    </div>
+</div>
+
 
 <table class="table">
     <tr>
@@ -25,10 +42,10 @@
     {
         <tr>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.RestauranteID })
+                <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = item.RestauranteID })'"><span class="glyphicon glyphicon-minus"> </span> </button>
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.RestauranteID })
+                <button class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = item.RestauranteID })'"><span class="glyphicon glyphicon-pencil"> </span> </button>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RestauranteNome)
