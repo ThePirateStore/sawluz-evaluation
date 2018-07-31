@@ -15,7 +15,8 @@ namespace WebApplication2.Controllers
     {
         private Context db = new Context();
         
-        /*// GET: Restaurantes
+        /*
+        // GET: Restaurantes
         public ActionResult Index()
         {
             return View(db.Restaurantes.ToList());
