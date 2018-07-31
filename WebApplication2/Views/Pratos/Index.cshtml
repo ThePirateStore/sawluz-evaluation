@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication2.Models.Prato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rest.RestauranteNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PratoNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PratoPreco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rest.RestauranteNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PratoNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PratoPreco)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PratoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PratoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PratoID })
+        </td>
+    </tr>
+}
+
+</table>
