@@ -97,23 +97,6 @@ namespace WebApplication2.Controllers
         // GET: Pratos/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prato prato = db.Pratos.Find(id);
-            if (prato == null)
-            {
-                return HttpNotFound();
-            }
-            return View(prato);
-        }
-
-        // POST: Pratos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
             Prato prato = db.Pratos.Find(id);
             db.Pratos.Remove(prato);
             db.SaveChanges();

@@ -202,13 +202,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Restaurantes\Create.cshtml" />
-    <Content Include="Views\Restaurantes\Delete.cshtml" />
-    <Content Include="Views\Restaurantes\Details.cshtml" />
     <Content Include="Views\Restaurantes\Edit.cshtml" />
     <Content Include="Views\Restaurantes\Index.cshtml" />
     <Content Include="Views\Pratos\Create.cshtml" />
-    <Content Include="Views\Pratos\Delete.cshtml" />
-    <Content Include="Views\Pratos\Details.cshtml" />
     <Content Include="Views\Pratos\Edit.cshtml" />
     <Content Include="Views\Pratos\Index.cshtml" />
   </ItemGroup>

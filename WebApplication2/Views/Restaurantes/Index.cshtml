@@ -4,30 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<p>&emsp;</p>
+<h2>RESTAURANTES</h2>
+<p>&emsp;</p>
+<a href="~/Restaurantes/Create"><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Cadastrar novo Restaurante</button></a>
+<p>&emsp;</p>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.RestauranteNome)
+
         </th>
-        <th></th>
+        <th>
+
+        </th>
+        <th>Restaurantes</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RestauranteNome)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RestauranteID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RestauranteID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RestauranteID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.RestauranteID })
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RestauranteID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RestauranteNome)
+            </td>
+        </tr>
+    }
 
 </table>

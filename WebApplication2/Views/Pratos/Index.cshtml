@@ -3,41 +3,49 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<p>&emsp;</p>
+<h2>PRATOS</h2>
+<p>&emsp;</p>
+<a href="~/Pratos/Create"><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Cadastrar novo Prato</button></a>
+<p>&emsp;</p>
+<br />
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Rest.RestauranteNome)
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PratoNome)
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PratoPreco)
+            Restaurante
         </th>
-        <th></th>
+        <th>
+            Prato
+        </th>
+        <th>
+            Preço
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Rest.RestauranteNome)
+            <a href="~/Pratos/Delete/"><button class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></button></a>
+            @Html.ActionLink("Delete", "Delete", new { id = item.PratoID })
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PratoNome)
+            <a href="~/Pratos/Edit/"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
+            @Html.ActionLink("Edit", "Edit", new { id = item.PratoID })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rest.RestauranteNome)      
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PratoNome)        
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PratoPreco)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PratoID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PratoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PratoID })
         </td>
     </tr>
 }

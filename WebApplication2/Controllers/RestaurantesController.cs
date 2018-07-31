@@ -92,23 +92,6 @@ namespace WebApplication2.Controllers
         // GET: Restaurantes/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Restaurante restaurante = db.Restaurantes.Find(id);
-            if (restaurante == null)
-            {
-                return HttpNotFound();
-            }
-            return View(restaurante);
-        }
-
-        // POST: Restaurantes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
             Restaurante restaurante = db.Restaurantes.Find(id);
             db.Restaurantes.Remove(restaurante);
             db.SaveChanges();
