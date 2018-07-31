@@ -8,7 +8,7 @@ This project was developed using Microsoft Visual Studio Community 2017.
 # Application details:
 Development: ASP.NET MVC, SQL Server Express, and Entity Framework with a Code-First approach.<br>
 
-# Extra:
+# Extras:
 This application visual details are simple and were developed with no style techniques, according to the sketch prototype made by the company that requested the challenge.<br>
 
 
